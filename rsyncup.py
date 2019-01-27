@@ -28,7 +28,7 @@ def copy(dst, src):
     return logged_call(cmd)
 
 def rsync(dst, src):
-    cmd = ["rsync", "-ravzX", "--delete", "--delete-excluded"]
+    cmd = ["rsync", "-ravX", "--delete", "--delete-excluded"]
     for e in EXCLUDE:
         cmd += ["--exclude", e]
     cmd += [src, dst]
